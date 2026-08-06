@@ -1,12 +1,11 @@
 import { createClient } from "next-sanity";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "missing-project-id";
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+import { apiVersion, dataset, projectId } from "@/sanity/env";
 
 export const sanityClient = createClient({
   projectId,
   dataset,
-  apiVersion: "2025-02-19",
+  apiVersion,
   useCdn: true,
 });
 

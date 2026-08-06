@@ -39,6 +39,12 @@ Copy-Item .env.example .env.local
 
 Preencha `NEXT_PUBLIC_SANITY_PROJECT_ID` e `NEXT_PUBLIC_SANITY_DATASET` em `.env.local`. O dataset padrão é `production`.
 
+Para cadastrar as lojas iniciais, inclua também `SANITY_API_WRITE_TOKEN` (token com acesso de escrita) e execute:
+
+```bash
+npm run seed:lojas
+```
+
 ## Documentação
 
 Registros e documentos do projeto ficam em [docs/](docs/).

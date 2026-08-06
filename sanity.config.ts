@@ -1,10 +1,8 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 
+import { dataset, projectId } from "./sanity/env";
 import { schemaTypes } from "./sanity/schemaTypes";
-
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "missing-project-id";
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 
 export default defineConfig({
   basePath: "/studio",

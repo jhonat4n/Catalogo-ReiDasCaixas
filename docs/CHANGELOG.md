@@ -7,6 +7,7 @@ Todas as mudanças relevantes deste projeto serão registradas neste arquivo.
 ### Adicionado
 
 - Integração do Sanity CMS, Studio incorporado em `/studio`, schemas de produtos, lojas e categorias e consultas para o catálogo.
+- Script idempotente para cadastrar as unidades Eldorado e BH Centro no Sanity.
 
 ## [0.1.0] - 2026-08-05
 
