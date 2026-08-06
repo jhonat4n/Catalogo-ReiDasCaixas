@@ -51,6 +51,8 @@ Registros e documentos do projeto ficam em [docs/](docs/).
 
 ## Componentes
 
+`components/Header.tsx` e `components/Footer.tsx` formam a navegação institucional responsiva, com contatos das unidades Eldorado e BH Centro.
+
 `components/ImagePlaceholder.tsx` exibe o placeholder "Foto em breve" enquanto
 uma imagem não está cadastrada e renderiza a imagem real com `next/image` quando
 a prop `image` é fornecida. O texto pode ser personalizado pela prop `text`.

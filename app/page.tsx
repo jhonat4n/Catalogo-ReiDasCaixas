@@ -2,7 +2,7 @@ const categories = ["Caixas para presente", "Embalagens para alimentos", "Sacola
 
 export default function Home() {
   return (
-    <main className="mx-auto flex min-h-screen max-w-5xl flex-col px-6 py-16 sm:px-10">
+    <main id="inicio" className="mx-auto flex min-h-screen max-w-5xl flex-col px-6 py-16 sm:px-10">
       <header className="flex items-center justify-between border-b border-dourado pb-6">
         <span className="font-titulo text-xl font-bold tracking-tight text-vermelho">REI DAS CAIXAS</span>
         <span className="text-sm font-medium text-marrom-escuro">Catálogo</span>
