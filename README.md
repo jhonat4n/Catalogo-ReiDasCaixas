@@ -48,3 +48,9 @@ npm run seed:lojas
 ## Documentação
 
 Registros e documentos do projeto ficam em [docs/](docs/).
+
+## Componentes
+
+`components/ImagePlaceholder.tsx` exibe o placeholder "Foto em breve" enquanto
+uma imagem não está cadastrada e renderiza a imagem real com `next/image` quando
+a prop `image` é fornecida. O texto pode ser personalizado pela prop `text`.
