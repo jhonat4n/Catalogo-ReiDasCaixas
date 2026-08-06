@@ -1,5 +1,17 @@
 import type { Metadata } from "next";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-lora",
+  weight: ["700"],
+});
 
 export const metadata: Metadata = {
   title: "Rei das Caixas | Catálogo",
@@ -13,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className={`${inter.variable} ${lora.variable} font-texto`}>{children}</body>
     </html>
   );
 }
