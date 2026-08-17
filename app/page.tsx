@@ -1,6 +1,11 @@
-const categories = ["Caixas para presente", "Embalagens para alimentos", "Sacolas", "Personalizadas"];
+import ProductGrid from "@/components/ProductGrid";
+import { getProdutos } from "@/lib/sanity-client";
 
-export default function Home() {
+export const revalidate = 60;
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const products = (await getProdutos()).filter((product) => product.destaque);
   return (
     <main id="inicio" className="mx-auto flex min-h-screen max-w-5xl flex-col px-6 py-16 sm:px-10">
       <header className="flex items-center justify-between border-b border-dourado pb-6">
@@ -18,16 +23,9 @@ export default function Home() {
         </p>
       </section>
 
-      <section aria-labelledby="categorias" className="pb-8">
-        <h2 id="categorias" className="font-titulo mb-5 text-lg font-bold text-marrom-escuro">Categorias em destaque</h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((category) => (
-            <article key={category} className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-dourado/40">
-              <h3 className="font-titulo font-bold text-marrom-escuro">{category}</h3>
-              <p className="mt-2 text-sm text-marrom-escuro/70">Em breve no catálogo.</p>
-            </article>
-          ))}
-        </div>
+      <section aria-labelledby="destaques" className="pb-8">
+        <h2 id="destaques" className="font-titulo mb-5 text-lg font-bold text-marrom-escuro">Produtos em destaque</h2>
+        <ProductGrid products={products} />
       </section>
     </main>
   );

@@ -14,6 +14,19 @@ export type ProdutoFilters = {
   categoria?: string;
 };
 
+export type Produto = {
+  _id: string;
+  nome: string;
+  slug: string;
+  descricao?: string;
+  preco?: number;
+  imagens?: unknown[];
+  disponivel?: boolean;
+  destaque?: boolean;
+  unidadesDisponiveis?: ("Eldorado" | "BH Centro")[];
+  categoria?: { _id: string; nome: string; slug: string };
+};
+
 const produtoProjection = `{
   _id,
   nome,
@@ -41,7 +54,7 @@ export async function getProdutos(filters: ProdutoFilters = {}) {
     params.categoria = filters.categoria;
   }
 
-  return sanityClient.fetch(
+  return sanityClient.fetch<Produto[]>(
     `*[${conditions.join(" && ")}] | order(nome asc) ${produtoProjection}`,
     params,
   );
@@ -55,7 +68,7 @@ export async function getProdutoBySlug(slug: string) {
 }
 
 export async function getCategorias() {
-  return sanityClient.fetch(
+  return sanityClient.fetch<{ _id: string; nome: string; slug: string }[]>(
     `*[_type == 'categoria'] | order(nome asc) { _id, nome, "slug": slug.current }`,
   );
 }

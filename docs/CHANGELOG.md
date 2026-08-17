@@ -6,6 +6,9 @@ Todas as mudanças relevantes deste projeto serão registradas neste arquivo.
 
 ### Adicionado
 
+- Catálogo conectado ao Sanity em `/catalogo`, com cards de produtos, busca, filtro por categoria e filtro por loja.
+- Página inicial passa a exibir produtos marcados como destaque e usa `ImagePlaceholder` para itens sem foto.
+
 - (2026-08-05) Header responsivo com navegação, menu mobile e seleção de WhatsApp por unidade, além de Footer com lojas, Instagram e links rápidos.
 
 

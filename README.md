@@ -51,6 +51,12 @@ Registros e documentos do projeto ficam em [docs/](docs/).
 
 ## Componentes
 
+## Catálogo
+
+A página `/catalogo` consulta produtos e categorias do Sanity e oferece busca por nome,
+filtro por categoria e filtro por loja (Eldorado ou BH Centro). A página inicial exibe
+produtos marcados como destaque no CMS; itens sem foto usam `ImagePlaceholder`.
+
 `components/Header.tsx` e `components/Footer.tsx` formam a navegação institucional responsiva, com contatos das unidades Eldorado e BH Centro.
 
 `components/ImagePlaceholder.tsx` exibe o placeholder "Foto em breve" enquanto
