@@ -2,7 +2,9 @@ import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 
 import { dataset, projectId } from "./sanity/env";
-import { schemaTypes } from "./sanity/schemaTypes";
+import { categoria } from "./sanity/schemaTypes/categoria";
+import { loja } from "./sanity/schemaTypes/loja";
+import { produto } from "./sanity/schemaTypes/produto";
 
 export default defineConfig({
   basePath: "/studio",
@@ -10,6 +12,6 @@ export default defineConfig({
   dataset,
   plugins: [structureTool()],
   schema: {
-    types: schemaTypes,
+    types: [produto, loja, categoria],
   },
 });

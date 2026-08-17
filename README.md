@@ -57,6 +57,11 @@ A página `/catalogo` consulta produtos e categorias do Sanity e oferece busca p
 filtro por categoria e filtro por loja (Eldorado ou BH Centro). A página inicial exibe
 produtos marcados como destaque no CMS; itens sem foto usam `ImagePlaceholder`.
 
+O cabeçalho usa navegação com espaçamento responsivo, e a home apresenta o hero da
+loja, atalhos para as duas unidades no WhatsApp e a faixa de diferenciais.
+
+O Studio em `/studio` registra os tipos `produto`, `loja` e `categoria` no menu lateral.
+
 `components/Header.tsx` e `components/Footer.tsx` formam a navegação institucional responsiva, com contatos das unidades Eldorado e BH Centro.
 
 `components/ImagePlaceholder.tsx` exibe o placeholder "Foto em breve" enquanto

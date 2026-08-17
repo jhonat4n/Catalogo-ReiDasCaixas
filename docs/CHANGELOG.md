@@ -6,6 +6,11 @@ Todas as mudanças relevantes deste projeto serão registradas neste arquivo.
 
 ### Adicionado
 
+- Ajuste do Sanity Studio para registrar explicitamente os tipos `produto`, `loja` e `categoria`.
+- Hero da home atualizado com badge, chamadas para catálogo, WhatsApp das unidades e corte a laser.
+- Adicionado `FeatureStrip` com os quatro diferenciais da loja; removido o bloco duplicado abaixo do Header.
+- Corrigido o espaçamento da navegação e o scan do Tailwind para os componentes.
+
 - Catálogo conectado ao Sanity em `/catalogo`, com cards de produtos, busca, filtro por categoria e filtro por loja.
 - Página inicial passa a exibir produtos marcados como destaque e usa `ImagePlaceholder` para itens sem foto.
 

@@ -1,32 +1,15 @@
+import Link from "next/link";
+import FeatureStrip from "@/components/FeatureStrip";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ProductGrid from "@/components/ProductGrid";
 import { getProdutos } from "@/lib/sanity-client";
 
 export const revalidate = 60;
 export const dynamic = "force-dynamic";
 
+const whatsapp = (phone: string) => `https://wa.me/${phone.replace(/\D/g, "")}`;
+
 export default async function Home() {
   const products = (await getProdutos()).filter((product) => product.destaque);
-  return (
-    <main id="inicio" className="mx-auto flex min-h-screen max-w-5xl flex-col px-6 py-16 sm:px-10">
-      <header className="flex items-center justify-between border-b border-dourado pb-6">
-        <span className="font-titulo text-xl font-bold tracking-tight text-vermelho">REI DAS CAIXAS</span>
-        <span className="text-sm font-medium text-marrom-escuro">Catálogo</span>
-      </header>
-
-      <section className="flex flex-1 flex-col justify-center py-20">
-        <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-vermelho">Embalagens que valorizam sua marca</p>
-        <h1 className="font-titulo max-w-3xl text-5xl font-bold tracking-tight text-marrom-escuro sm:text-7xl">
-          Encontre a caixa ideal para o seu produto.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-marrom-escuro/80">
-          Consulte nossas opções de embalagens e fale com um vendedor para receber atendimento personalizado.
-        </p>
-      </section>
-
-      <section aria-labelledby="destaques" className="pb-8">
-        <h2 id="destaques" className="font-titulo mb-5 text-lg font-bold text-marrom-escuro">Produtos em destaque</h2>
-        <ProductGrid products={products} />
-      </section>
-    </main>
-  );
+  return <main id="inicio"><section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-24"><div><p className="mb-5 inline-flex rounded-full bg-dourado/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-marrom-escuro">LOJA DE ARTESANATO EM MG</p><h1 className="font-titulo text-4xl font-bold leading-tight text-marrom-escuro sm:text-6xl">Artesanato em MDF, caixas e peças personalizadas</h1><p className="mt-6 max-w-xl text-lg leading-8 text-marrom-escuro/75">Conheça nosso catálogo e encontre peças especiais para presentear, decorar e valorizar sua marca.</p><div className="mt-8 flex flex-wrap gap-3"><Link href="/catalogo" className="rounded-full bg-marrom-escuro px-5 py-3 text-sm font-bold text-white hover:bg-marrom-escuro/90">Ver catálogo</Link><a href={whatsapp("31 99440-0481")} target="_blank" rel="noreferrer" className="rounded-full bg-whatsapp px-5 py-3 text-sm font-bold text-white">Unidade Eldorado</a><a href={whatsapp("31 98223-9878")} target="_blank" rel="noreferrer" className="rounded-full border-2 border-whatsapp px-5 py-3 text-sm font-bold text-whatsapp">Unidade BH Centro</a><Link href="/corte-a-laser" className="rounded-full border-2 border-marrom-escuro px-5 py-3 text-sm font-bold text-marrom-escuro">Conhecer corte a laser</Link></div></div><ImagePlaceholder text="Foto em breve" className="min-h-[280px]" /></section><FeatureStrip /><section aria-labelledby="destaques" className="mx-auto max-w-7xl px-6 py-14 lg:px-10"><h2 id="destaques" className="mb-6 font-titulo text-2xl font-bold text-marrom-escuro">Produtos em destaque</h2><ProductGrid products={products} /></section></main>;
 }
