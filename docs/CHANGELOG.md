@@ -6,6 +6,8 @@ Todas as mudanças relevantes deste projeto serão registradas neste arquivo.
 
 ### Adicionado
 
+- Página dinâmica `/produto/[slug]` com galeria, detalhes do produto, disponibilidade por loja e botões de WhatsApp com mensagem pré-preenchida.
+
 - Ajuste do Sanity Studio para registrar explicitamente os tipos `produto`, `loja` e `categoria`.
 - Hero da home atualizado com badge, chamadas para catálogo, WhatsApp das unidades e corte a laser.
 - Adicionado `FeatureStrip` com os quatro diferenciais da loja; removido o bloco duplicado abaixo do Header.

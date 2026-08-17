@@ -61,7 +61,7 @@ export async function getProdutos(filters: ProdutoFilters = {}) {
 }
 
 export async function getProdutoBySlug(slug: string) {
-  return sanityClient.fetch(
+  return sanityClient.fetch<Produto | null>(
     `*[_type == 'produto' && slug.current == $slug][0] ${produtoProjection}`,
     { slug },
   );

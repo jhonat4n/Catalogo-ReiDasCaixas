@@ -62,6 +62,10 @@ loja, atalhos para as duas unidades no WhatsApp e a faixa de diferenciais.
 
 O Studio em `/studio` registra os tipos `produto`, `loja` e `categoria` no menu lateral.
 
+Cada produto possui uma página própria em `/produto/[slug]`, com galeria, detalhes,
+disponibilidade por unidade e contato direto pelo WhatsApp. O catálogo não possui
+compra, carrinho ou checkout.
+
 `components/Header.tsx` e `components/Footer.tsx` formam a navegação institucional responsiva, com contatos das unidades Eldorado e BH Centro.
 
 `components/ImagePlaceholder.tsx` exibe o placeholder "Foto em breve" enquanto
