@@ -70,7 +70,8 @@ fixos, e `StoreCard` mantém links independentes e HTML válido para os contatos
 - WhatsApp das unidades Eldorado e BH Centro e Instagram `@rei_das_caixas`.
 - Os selos de disponibilidade dos produtos são links individuais para o WhatsApp da
   unidade correspondente, com o nome do produto na mensagem pré-preenchida. Os números
-  são carregados do campo `whatsapp` do schema `loja`.
+  são carregados do campo `whatsapp` do schema `loja`. Os links usam o verde WhatsApp
+  `#25D366`, com área de toque ampliada e destaque consistente no hover.
 
 ## Deploy na Vercel
 

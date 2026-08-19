@@ -6,6 +6,9 @@ Todas as mudanças relevantes deste projeto são registradas aqui em ordem crono
 
 ### Alterações recentes
 
+- (2026-08-19) Aumentado o tamanho dos links de disponibilidade por loja e aplicada a
+  cor verde WhatsApp (`#25D366`) no fundo e no hover, facilitando o toque e mantendo a
+  consistência visual com os demais botões de contato.
 - (2026-08-19) Os selos de disponibilidade no catálogo e na página de produto agora
   funcionam como links independentes para cada unidade. Cada link usa o WhatsApp
   cadastrado no schema `loja` e abre uma mensagem pré-preenchida com o nome do produto.
