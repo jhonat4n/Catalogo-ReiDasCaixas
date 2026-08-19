@@ -42,6 +42,14 @@ export type Loja = {
   googleMapsUrl: string;
 };
 
+export type FotoGaleria = {
+  _id: string;
+  imagem: unknown;
+  titulo: string;
+  descricao?: string;
+  ordem?: number;
+};
+
 const produtoProjection = `{
   _id,
   nome,
@@ -110,4 +118,20 @@ export async function getLojas() {
       googleMapsUrl
     }`,
   );
+}
+
+export async function getFotosGaleria() {
+  try {
+    return await sanityClient.fetch<FotoGaleria[]>(
+      `*[_type == 'fotoGaleria'] | order(coalesce(ordem, 999999) asc, _createdAt asc) {
+        _id,
+        imagem,
+        titulo,
+        descricao,
+        ordem
+      }`,
+    );
+  } catch {
+    return [];
+  }
 }

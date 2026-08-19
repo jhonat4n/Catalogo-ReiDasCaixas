@@ -41,6 +41,12 @@ Para cadastrar um produto:
    o site mostra `ImagePlaceholder` com “Foto em breve”.
 5. Marque **Destaque** para exibir o produto na seção de destaques da página inicial.
 
+Para cadastrar fotos na galeria pelo Studio, abra **Foto da galeria**, crie um documento,
+envie a imagem, informe o título (por exemplo, “Ambiente da loja”), adicione uma descrição
+breve se desejar e publique. Use o campo **Ordem** para controlar a posição; números menores
+aparecem primeiro. Sem fotos publicadas, `/galeria` mostra `ImagePlaceholder`; com fotos,
+título e descrição ficam acessíveis por mouse, toque e em telas pequenas.
+
 As lojas iniciais podem ser cadastradas de forma idempotente com um token de escrita:
 
 ```bash
@@ -72,6 +78,12 @@ fixos, e `StoreCard` mantém links independentes e HTML válido para os contatos
   unidade correspondente, com o nome do produto na mensagem pré-preenchida. Os números
   são carregados do campo `whatsapp` do schema `loja`. Os links usam o verde WhatsApp
   `#25D366`, com área de toque ampliada e destaque consistente no hover.
+
+## Galeria
+
+A rota `/galeria` consulta o schema `fotoGaleria` no Sanity, com upload, título, descrição
+opcional e ordenação. As imagens têm zoom e overlay no desktop, enquanto o mobile mantém
+as informações visíveis abaixo da imagem e permite alternar o overlay por toque.
 
 ## Deploy na Vercel
 

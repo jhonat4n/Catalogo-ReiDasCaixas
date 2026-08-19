@@ -30,6 +30,13 @@ Todas as mudanças relevantes deste projeto são registradas aqui em ordem crono
 - Header responsivo com navegação espaçada, menu mobile, WhatsApp por unidade e Footer institucional.
 - `.env.example`, documentação de desenvolvimento, Sanity Studio e deploy na Vercel.
 
+- (2026-08-19) Adicionado o schema Sanity `fotoGaleria` com imagem, título, descrição e
+  ordem. `/galeria` agora consulta fotos publicadas, ordena por ordem e usa
+  `ImagePlaceholder` como fallback; fotos têm zoom/overlay no desktop e informação
+  acessível no toque e em telas pequenas.
+- (2026-08-19) Melhorado o feedback dos links de disponibilidade por loja com transição
+  suave, escala no hover, sombra e estado pressionado para dispositivos touch.
+
 ## [0.1.0] - 2026-08-05
 
 ### Adicionado

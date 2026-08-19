@@ -3,6 +3,7 @@ import { structureTool } from "sanity/structure";
 
 import { dataset, projectId } from "./sanity/env";
 import { categoria } from "./sanity/schemaTypes/categoria";
+import { fotoGaleria } from "./sanity/schemaTypes/fotoGaleria";
 import { loja } from "./sanity/schemaTypes/loja";
 import { produto } from "./sanity/schemaTypes/produto";
 
@@ -12,6 +13,6 @@ export default defineConfig({
   dataset,
   plugins: [structureTool()],
   schema: {
-    types: [produto, loja, categoria],
+    types: [produto, loja, categoria, fotoGaleria],
   },
 });
