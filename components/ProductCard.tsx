@@ -1,10 +1,11 @@
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import StoreAvailabilityBadge from "@/components/StoreAvailabilityBadge";
 import { urlForImage } from "@/lib/sanity-image";
-import type { Produto } from "@/lib/sanity-client";
+import type { Produto, StoreName } from "@/lib/sanity-client";
 
-type ProductCardProps = { product: Produto };
+type ProductCardProps = { product: Produto; storePhones: Partial<Record<StoreName, string>> };
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, storePhones }: ProductCardProps) {
   const image = product.imagens?.[0]
     ? urlForImage(product.imagens[0]).url()
     : undefined;
@@ -17,9 +18,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <p className="text-xs font-bold uppercase tracking-wide text-vermelho">{product.categoria?.nome ?? "Sem categoria"}</p>
         <h2 className="mt-2 font-titulo text-xl font-bold text-marrom-escuro">{product.nome}</h2>
         {product.preco != null && <p className="mt-3 text-lg font-bold text-marrom-escuro">R$ {product.preco.toFixed(2).replace(".", ",")}</p>}
-        <div className="mt-auto flex flex-wrap gap-2 pt-4" aria-label="Disponibilidade por loja">
-          {stores.map((store) => <span key={store} className="rounded-full bg-creme px-3 py-1 text-xs font-semibold text-marrom-escuro">{store}</span>)}
-        </div>
+        <div className="mt-auto pt-4"><StoreAvailabilityBadge stores={stores} storePhones={storePhones} productName={product.nome} /></div>
       </div>
     </article>
   );

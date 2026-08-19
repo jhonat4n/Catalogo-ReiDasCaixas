@@ -14,6 +14,8 @@ export type ProdutoFilters = {
   categoria?: string;
 };
 
+export type StoreName = "Eldorado" | "BH Centro";
+
 export type Produto = {
   _id: string;
   nome: string;
@@ -23,8 +25,21 @@ export type Produto = {
   imagens?: unknown[];
   disponivel?: boolean;
   destaque?: boolean;
-  unidadesDisponiveis?: ("Eldorado" | "BH Centro")[];
+  unidadesDisponiveis?: StoreName[];
   categoria?: { _id: string; nome: string; slug: string };
+};
+
+export type Loja = {
+  _id: string;
+  unidade: string;
+  cidadeEstado: string;
+  endereco: string;
+  referencia?: string;
+  whatsapp: string;
+  horario: string[];
+  avisoDestaque: string;
+  servicosExclusivos?: string[];
+  googleMapsUrl: string;
 };
 
 const produtoProjection = `{
@@ -73,8 +88,15 @@ export async function getCategorias() {
   );
 }
 
+export async function getCategoriaBySlug(slug: string) {
+  return sanityClient.fetch<{ _id: string; nome: string; slug: string } | null>(
+    `*[_type == 'categoria' && slug.current == $slug][0] { _id, nome, "slug": slug.current }`,
+    { slug },
+  );
+}
+
 export async function getLojas() {
-  return sanityClient.fetch(
+  return sanityClient.fetch<Loja[]>(
     `*[_type == 'loja'] | order(unidade asc) {
       _id,
       unidade,

@@ -6,6 +6,9 @@ Todas as mudanças relevantes deste projeto são registradas aqui em ordem crono
 
 ### Alterações recentes
 
+- (2026-08-19) Os selos de disponibilidade no catálogo e na página de produto agora
+  funcionam como links independentes para cada unidade. Cada link usa o WhatsApp
+  cadastrado no schema `loja` e abre uma mensagem pré-preenchida com o nome do produto.
 - (2026-08-19) Corrigido o hydration mismatch em `/galeria`, `/unidades`, `/faq` e
   `/contato`: removidos os layouts de rota que duplicavam `<html>` e `<body>`, deixando
   o layout raiz como a única árvore HTML. A causa era HTML inválido reparado pelo

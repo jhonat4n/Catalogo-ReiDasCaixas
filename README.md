@@ -68,6 +68,9 @@ fixos, e `StoreCard` mantém links independentes e HTML válido para os contatos
 - Sanity Studio em `/studio` para manutenção do catálogo.
 - Layout responsivo, acessível, com foco visível, `next/image` e placeholders para fotos.
 - WhatsApp das unidades Eldorado e BH Centro e Instagram `@rei_das_caixas`.
+- Os selos de disponibilidade dos produtos são links individuais para o WhatsApp da
+  unidade correspondente, com o nome do produto na mensagem pré-preenchida. Os números
+  são carregados do campo `whatsapp` do schema `loja`.
 
 ## Deploy na Vercel
 
