@@ -9,7 +9,7 @@ const config: Config = {
         dourado: "#FFC629",
         "marrom-escuro": "#3B2A1E",
         creme: "#FDF6EC",
-        whatsapp: "#25D366",
+        whatsapp: "#16803F",
       },
       fontFamily: {
         titulo: ["var(--font-lora)", "serif"],

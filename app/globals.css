@@ -10,6 +10,15 @@
   box-sizing: border-box;
 }
 
+:where(a, button, input, select):focus-visible {
+  outline: 3px solid #e4312b;
+  outline-offset: 3px;
+}
+
+:where(a, button, input, select):focus:not(:focus-visible) {
+  outline: none;
+}
+
 body {
   margin: 0;
   background: #fdf6ec;
