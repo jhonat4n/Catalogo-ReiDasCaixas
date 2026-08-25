@@ -66,6 +66,8 @@ e as páginas de catálogo usam skeletons enquanto os produtos são carregados.
 Produtos podem ser salvos como favoritos no navegador. A barra de favoritos permite
 remover itens e enviar uma lista de pedido de orçamento para a unidade escolhida no
 WhatsApp. Um botão flutuante de WhatsApp também fica disponível em todas as páginas.
+Na página de detalhe, o botão “Compartilhar” usa o compartilhamento nativo do celular
+ou copia o link do produto para a área de transferência.
 
 As páginas `/galeria`, `/unidades`, `/faq` e `/contato` usam exclusivamente o layout
 raiz da aplicação. Não crie layouts de rota que renderizem novos elementos `<html>` ou
