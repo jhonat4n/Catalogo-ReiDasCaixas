@@ -1,5 +1,8 @@
 # Changelog
 
+- (2026-08-25) Adicionados favoritos persistentes no navegador, pedido de orçamento dos
+  favoritos via WhatsApp e botão flutuante de contato para as duas unidades.
+
 Todas as mudanças relevantes deste projeto são registradas aqui em ordem cronológica.
 
 ## [Não lançado]

@@ -3,6 +3,9 @@ import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FavoritesProvider from "@/components/FavoritesProvider";
+import FavoritesBar from "@/components/FavoritesBar";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora", weight: ["700"] });
@@ -18,5 +21,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="pt-BR"><body className={`${inter.variable} ${lora.variable} font-texto`}><Header />{children}<Footer /></body></html>;
+  return <html lang="pt-BR"><body className={`${inter.variable} ${lora.variable} font-texto`}><FavoritesProvider><Header />{children}<Footer /><FavoritesBar /><FloatingWhatsApp /></FavoritesProvider></body></html>;
 }
