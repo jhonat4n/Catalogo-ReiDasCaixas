@@ -63,6 +63,8 @@ mismatch, inclusive fazendo o Header desaparecer após o carregamento do JavaScr
 
 O acordeão da FAQ e o grid da Galeria usam chaves determinísticas baseadas nos dados
 fixos, e `StoreCard` mantém links independentes e HTML válido para os contatos.
+A FAQ apresenta 13 perguntas, com a primeira resposta aberta por padrão e as demais
+controladas pelo acordeão.
 
 - Home com hero institucional, diferenciais e produtos marcados como destaque no Sanity.
 - Catálogo em `/catalogo` com busca por nome, filtro por categoria e filtro por unidade.

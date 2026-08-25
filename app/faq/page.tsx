@@ -6,7 +6,6 @@ const faqs = [
   ["Posso comprar pelo site?", "No momento, o site funciona apenas como catálogo. Para consultar valores, disponibilidade ou fazer um pedido, entre em contato com uma das unidades pelo WhatsApp."],
   ["Os produtos têm preço no site?", "Alguns produtos podem exibir um valor de referência, mas o preço final pode variar conforme personalização, material e disponibilidade. O valor definitivo é sempre confirmado pelo WhatsApp."],
   ["Vocês fazem entrega?", "Consulte a disponibilidade de entrega diretamente com a unidade mais próxima pelo WhatsApp, pois as condições podem variar conforme a região e o produto."],
-  ["Vocês reservam produtos pelo WhatsApp?", "Sim, você pode falar com a unidade desejada pelo WhatsApp para verificar a disponibilidade e combinar a reserva do produto."],
   ["Vocês fazem encomendas?", "Sim, fazemos encomendas de peças personalizadas, conforme material, prazo e viabilidade técnica. Fale com uma das unidades pelo WhatsApp para verificar seu pedido."],
   ["Qual é o prazo para encomendas?", "O prazo varia conforme o tipo de peça, a personalização solicitada e a demanda do momento. Consulte o prazo do seu pedido diretamente pelo WhatsApp."],
   ["Vocês fazem corte a laser?", "Sim, o corte e a gravação a laser são realizados presencialmente na unidade Eldorado, em MDF 3mm, MDF 6mm e acrílico 3mm, até 90cm x 60cm."],

@@ -6,6 +6,9 @@ Todas as mudanças relevantes deste projeto são registradas aqui em ordem crono
 
 ### Alterações recentes
 
+- (2026-08-25) Removida da FAQ a pergunta sobre reserva de produtos pelo WhatsApp e sua
+  resposta, mantendo as 13 perguntas restantes e o funcionamento do acordeão, com a
+  primeira pergunta aberta por padrão.
 - (2026-08-19) Aumentado o tamanho dos links de disponibilidade por loja e aplicada a
   cor verde WhatsApp (`#25D366`) no fundo e no hover, facilitando o toque e mantendo a
   consistência visual com os demais botões de contato.
