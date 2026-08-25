@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: "Rei das Caixas Artesanato", description: "Artesanato em MDF, caixas e peças personalizadas em MG.", images: ["/images/Logo.png"] },
   other: { "instagram:site": "@rei_das_caixas", "instagram:creator": "@rei_das_caixas" },
 };
+
+export const viewport: Viewport = { themeColor: "#3B2A1E" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="pt-BR"><body className={`${inter.variable} ${lora.variable} font-texto`}><FavoritesProvider><Header />{children}<Footer /><FavoritesBar /><FloatingWhatsApp /></FavoritesProvider></body></html>;

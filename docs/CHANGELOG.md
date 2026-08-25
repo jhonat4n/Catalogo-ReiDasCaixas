@@ -1,5 +1,8 @@
 # Changelog
 
+- (2026-08-25) Adicionado scroll reveal discreto aos cards, com respeito à preferência
+  de redução de movimento, e manifest PWA básico usando a logo da marca.
+
 - (2026-08-25) Adicionados lightbox acessível para a galeria de produtos e skeletons
   de carregamento para o catálogo e os destaques da página inicial.
 

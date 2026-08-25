@@ -56,6 +56,10 @@ npm run seed:lojas
 
 ## Funcionalidades
 
+Os cards entram na tela com uma animação discreta de scroll reveal, desativada quando o
+navegador indica preferência por menos movimento. O site também oferece manifest PWA
+básico para instalação na tela inicial, sem service worker offline.
+
 As galerias de produtos podem ser ampliadas em um lightbox com navegação por teclado,
 e as páginas de catálogo usam skeletons enquanto os produtos são carregados.
 
