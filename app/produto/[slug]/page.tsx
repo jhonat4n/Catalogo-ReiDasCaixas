@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import FavoriteButton from "@/components/FavoriteButton";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ProductGallery from "@/components/ProductGallery";
 import StoreAvailabilityBadge from "@/components/StoreAvailabilityBadge";
 import { getLojas, getProdutoBySlug } from "@/lib/sanity-client";
 import { urlForImage } from "@/lib/sanity-image";
@@ -23,12 +23,11 @@ export default async function ProdutoPage({ params }: { params: { slug: string }
   const availableStores = product.unidadesDisponiveis ?? [];
   const storePhones = Object.fromEntries(stores.map((store) => [store.unidade, store.whatsapp]));
 
+  const galleryImages = images.map((image, index) => ({ url: urlForImage(image).url(), alt: `${product.nome} — imagem ${index + 1}` }));
   return <main className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
     <Link href="/catalogo" className="text-sm font-semibold text-vermelho hover:underline">← Voltar ao catálogo</Link>
     <div className="mt-8 grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-      <section aria-label={`Galeria de ${product.nome}`} className="grid gap-4 sm:grid-cols-2">
-        {images.length ? images.map((image, index) => <ImagePlaceholder key={index} image={urlForImage(image).url()} alt={`${product.nome} — imagem ${index + 1}`} sizes="(max-width: 640px) 100vw, 50vw" />) : <ImagePlaceholder text="Foto em breve" className="sm:col-span-2" />}
-      </section>
+      <ProductGallery productName={product.nome} images={galleryImages} />
       <section>
         <p className="text-sm font-bold uppercase tracking-[0.15em] text-vermelho">{product.categoria?.nome ?? "Artesanato"}</p>
         <h1 className="mt-3 font-titulo text-4xl font-bold leading-tight text-marrom-escuro sm:text-5xl">{product.nome}</h1>

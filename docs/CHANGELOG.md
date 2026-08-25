@@ -1,5 +1,8 @@
 # Changelog
 
+- (2026-08-25) Adicionados lightbox acessível para a galeria de produtos e skeletons
+  de carregamento para o catálogo e os destaques da página inicial.
+
 - (2026-08-25) Adicionados favoritos persistentes no navegador, pedido de orçamento dos
   favoritos via WhatsApp e botão flutuante de contato para as duas unidades.
 

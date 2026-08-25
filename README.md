@@ -56,6 +56,9 @@ npm run seed:lojas
 
 ## Funcionalidades
 
+As galerias de produtos podem ser ampliadas em um lightbox com navegação por teclado,
+e as páginas de catálogo usam skeletons enquanto os produtos são carregados.
+
 Produtos podem ser salvos como favoritos no navegador. A barra de favoritos permite
 remover itens e enviar uma lista de pedido de orçamento para a unidade escolhida no
 WhatsApp. Um botão flutuante de WhatsApp também fica disponível em todas as páginas.
