@@ -1,5 +1,6 @@
 # Changelog
 
+- (2026-08-25) Restaurado o verde escuro `#16803F` nos botões e links de WhatsApp.
 - (2026-08-25) Adicionado scroll reveal discreto aos cards, com respeito à preferência
   de redução de movimento, e manifest PWA básico usando a logo da marca.
 
