@@ -1,5 +1,12 @@
 # Changelog
 
+- (2026-08-26) Redesenhado o tema escuro com paleta quente de marrom, creme, dourado e
+  bordas amarronzadas: fundo `#1E1814`, seções `#261F1A`, cards `#302720`, destaques
+  `#372C24`, texto principal `#F7ECDD`, texto secundário `#CDBBA8` e bordas `#55463A`.
+  Header, Hero, carrossel, faixa de diferenciais, catálogo, cards, formulários, FAQ,
+  popup de avaliações, galerias, skeletons e Footer foram ajustados para contraste,
+  profundidade e integração visual, preservando a lógica, as imagens e o verde WhatsApp.
+
 - (2026-08-26) Implementado tema claro/escuro global com alternância no Footer, persistência
   em `localStorage` (`rei-das-caixas-theme`) e fallback para `prefers-color-scheme`. A classe
   `dark` é aplicada antes da pintura para evitar FOUC e o layout usa `suppressHydrationWarning`
