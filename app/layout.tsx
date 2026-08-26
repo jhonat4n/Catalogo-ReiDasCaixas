@@ -22,10 +22,10 @@ export const metadata: Metadata = {
   other: { "instagram:site": "@rei_das_caixas", "instagram:creator": "@rei_das_caixas" },
 };
 
-export const viewport: Viewport = { themeColor: "#3B2A1E", colorScheme: "light dark" };
+export const viewport: Viewport = { themeColor: "#3B2A1E" };
 export const revalidate = 60;
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const reviews = await getAvaliacoesPublicas();
-  return <html lang="pt-BR" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: `(function(){try{if(location.pathname.indexOf('/studio')===0)return;var key='rei-das-caixas-theme',saved=localStorage.getItem(key),dark=window.matchMedia('(prefers-color-scheme: dark)').matches;var theme=saved==='dark'||saved==='light'?saved:(dark?'dark':'light');document.documentElement.classList.toggle('dark',theme==='dark');document.documentElement.style.colorScheme=theme;}catch(e){}})();` }} /></head><body className={`${inter.variable} ${lora.variable} font-texto`}><FavoritesProvider><Header />{children}<Footer /><FavoritesBar /><FloatingWhatsApp /><ReviewPopup reviews={reviews} /></FavoritesProvider></body></html>;
+  return <html lang="pt-BR"><body className={`${inter.variable} ${lora.variable} font-texto`}><FavoritesProvider><Header />{children}<Footer /><FavoritesBar /><FloatingWhatsApp /><ReviewPopup reviews={reviews} /></FavoritesProvider></body></html>;
 }

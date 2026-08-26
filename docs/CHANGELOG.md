@@ -1,18 +1,9 @@
 # Changelog
 
-- (2026-08-26) Redesenhado o tema escuro com paleta quente de marrom, creme, dourado e
-  bordas amarronzadas: fundo `#1E1814`, seções `#261F1A`, cards `#302720`, destaques
-  `#372C24`, texto principal `#F7ECDD`, texto secundário `#CDBBA8` e bordas `#55463A`.
-  Header, Hero, carrossel, faixa de diferenciais, catálogo, cards, formulários, FAQ,
-  popup de avaliações, galerias, skeletons e Footer foram ajustados para contraste,
-  profundidade e integração visual, preservando a lógica, as imagens e o verde WhatsApp.
-
-- (2026-08-26) Implementado tema claro/escuro global com alternância no Footer, persistência
-  em `localStorage` (`rei-das-caixas-theme`) e fallback para `prefers-color-scheme`. A classe
-  `dark` é aplicada antes da pintura para evitar FOUC e o layout usa `suppressHydrationWarning`
-  para manter SSR/hydration seguros. Header, páginas, catálogo, filtros, formulários, cards,
-  galerias, modais, avaliações, skeletons e controles receberam superfícies e contrastes
-  adequados ao modo noturno, preservando imagens e o verde institucional do WhatsApp.
+- (2026-08-26) Removido o sistema de tema claro/escuro, incluindo alternância no Footer,
+  persistência de preferência, detecção do tema do sistema, script anti-flash e estilos
+  específicos. O projeto voltou a utilizar exclusivamente o tema claro institucional, sem
+  alterar carrossel, avaliações, catálogo, favoritos, WhatsApp, PWA ou demais funcionalidades.
 
 - (2026-08-26) Substituída a composição de imagens empilhadas do Hero por um carrossel
   automático com `MDF_boxes.jpeg` e `Caixas_de_MDF.jpeg`, incluindo autoplay de 5 segundos,

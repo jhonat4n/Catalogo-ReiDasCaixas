@@ -3,18 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --color-vermelho: 228 49 43;
-  --color-dourado: 255 198 41;
-  --color-marrom-escuro: 59 42 30;
-  --color-creme: 253 246 236;
-  --color-whatsapp: 22 128 63;
   color-scheme: light;
-}
-
-:root.dark {
-  --color-marrom-escuro: 247 236 221;
-  --color-creme: 244 232 213;
-  color-scheme: dark;
 }
 
 * {
@@ -34,33 +23,4 @@ body {
   margin: 0;
   background: #fdf6ec;
   color: #3b2a1e;
-}
-
-.dark body { background: #1e1814; color: #f7ecdd; }
-.dark header { background-color: #261f1a !important; border-color: #55463a !important; }
-.dark header .text-marrom-escuro { color: #f7ecdd; }
-.dark header .hover\:bg-creme:hover { background-color: #372c24; }
-.dark footer { background-color: #17120f; }
-.dark .bg-marrom-escuro { background-color: #17120f; }
-.dark a.bg-marrom-escuro { background-color: #f4e8d5; color: #3b2a1e; }
-.dark a.bg-marrom-escuro:hover { background-color: #ffc629; }
-.dark .bg-creme { background-color: #261f1a; }
-.dark .bg-white { background-color: #302720; }
-.dark .hover\:bg-white:hover { background-color: #372c24; }
-.dark input, .dark select, .dark textarea { background-color: #302720; color: #f7ecdd; border-color: #55463a; }
-.dark input::placeholder, .dark textarea::placeholder { color: #cdbba8; }
-.dark input:focus, .dark select:focus, .dark textarea:focus { border-color: #ffc629; }
-.dark .bg-\[\#ead8c2\] { background-color: #372c24; }
-.dark .border-\[\#c7a77e\] { border-color: #55463a; }
-.dark section[aria-label="Diferenciais"] { background-color: #2a211c; border-color: #55463a; }
-.dark section[aria-label="Diferenciais"] .text-marrom-escuro { color: #f7ecdd; }
-.dark article.bg-white { border-color: #55463a; }
-.dark [class*="text-marrom-escuro/55"], .dark [class*="text-marrom-escuro/60"], .dark [class*="text-marrom-escuro/70"], .dark [class*="text-marrom-escuro/75"], .dark [class*="text-marrom-escuro/80"] { color: #cdbba8; }
-.dark .bg-dourado\/25.text-marrom-escuro { color: #3b2a1e; }
-.dark .bg-dourado\/15.text-marrom-escuro { color: #f7ecdd; }
-.dark .focus-visible\:outline-white:focus-visible { outline-color: #f7ecdd; }
-.dark .text-white { color: #fffaf3; }
-
-@media (prefers-reduced-motion: no-preference) {
-  body, body * { transition-property: background-color, color, border-color; transition-duration: 180ms; }
 }
