@@ -70,6 +70,11 @@ npm run seed:lojas
 
 ## Funcionalidades
 
+O site oferece tema claro e escuro pelo botão no final do Footer. Na primeira visita, a
+preferência do sistema é respeitada; uma escolha manual é salva no navegador e permanece
+ativa entre rotas e novas sessões. A implementação usa a classe `dark` do Tailwind e um
+bootstrap inline no layout para evitar flash de tema incorreto durante o SSR.
+
 Os cards entram na tela com uma animação discreta de scroll reveal, desativada quando o
 navegador indica preferência por menos movimento. O site também oferece manifest PWA
 básico para instalação na tela inicial, sem service worker offline.

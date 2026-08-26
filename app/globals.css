@@ -3,7 +3,18 @@
 @tailwind utilities;
 
 :root {
+  --color-vermelho: 228 49 43;
+  --color-dourado: 255 198 41;
+  --color-marrom-escuro: 59 42 30;
+  --color-creme: 253 246 236;
+  --color-whatsapp: 22 128 63;
   color-scheme: light;
+}
+
+:root.dark {
+  --color-marrom-escuro: 28 23 20;
+  --color-creme: 244 232 213;
+  color-scheme: dark;
 }
 
 * {
@@ -23,4 +34,17 @@ body {
   margin: 0;
   background: #fdf6ec;
   color: #3b2a1e;
+}
+
+.dark body { background: #1c1714; color: #f4e8d5; }
+.dark .bg-creme { background-color: #211a16; }
+.dark .bg-white { background-color: #2a211c; }
+.dark .hover\:bg-white:hover { background-color: #3a2c24; }
+.dark input, .dark select, .dark textarea { background-color: #2a211c; color: #f4e8d5; }
+.dark input::placeholder { color: rgb(244 232 213 / 0.5); }
+.dark .bg-\[\#ead8c2\] { background-color: #45352b; }
+.dark .border-\[\#c7a77e\] { border-color: #a7835b; }
+
+@media (prefers-reduced-motion: no-preference) {
+  body, body * { transition-property: background-color, color, border-color; transition-duration: 180ms; }
 }

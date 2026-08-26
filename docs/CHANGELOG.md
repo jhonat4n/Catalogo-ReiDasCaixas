@@ -1,5 +1,12 @@
 # Changelog
 
+- (2026-08-26) Implementado tema claro/escuro global com alternância no Footer, persistência
+  em `localStorage` (`rei-das-caixas-theme`) e fallback para `prefers-color-scheme`. A classe
+  `dark` é aplicada antes da pintura para evitar FOUC e o layout usa `suppressHydrationWarning`
+  para manter SSR/hydration seguros. Header, páginas, catálogo, filtros, formulários, cards,
+  galerias, modais, avaliações, skeletons e controles receberam superfícies e contrastes
+  adequados ao modo noturno, preservando imagens e o verde institucional do WhatsApp.
+
 - (2026-08-26) Substituída a composição de imagens empilhadas do Hero por um carrossel
   automático com `MDF_boxes.jpeg` e `Caixas_de_MDF.jpeg`, incluindo autoplay de 5 segundos,
   indicadores, setas acessíveis, pausa ao passar o mouse e transição discreta.
