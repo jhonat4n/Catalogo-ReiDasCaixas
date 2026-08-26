@@ -1,5 +1,10 @@
 # Changelog
 
+- (2026-08-26) Alterado o comportamento dos itens da Galeria: cada foto publicada agora
+  navega semanticamente para `/catalogo` ao ser clicada, com foco acessível, cursor e CTA
+  discreto no overlay. O overlay interativo anterior da Galeria foi removido para evitar
+  conflito de clique; o lightbox das imagens dos produtos permanece inalterado.
+
 - (2026-08-26) Removido o sistema de tema claro/escuro, incluindo alternância no Footer,
   persistência de preferência, detecção do tema do sistema, script anti-flash e estilos
   específicos. O projeto voltou a utilizar exclusivamente o tema claro institucional, sem
