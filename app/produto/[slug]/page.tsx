@@ -32,10 +32,11 @@ export default async function ProdutoPage({ params }: { params: { slug: string }
       <section>
         <p className="text-sm font-bold uppercase tracking-[0.15em] text-vermelho">{product.categoria?.nome ?? "Artesanato"}</p>
         <h1 className="mt-3 font-titulo text-4xl font-bold leading-tight text-marrom-escuro sm:text-5xl">{product.nome}</h1>
+        {product.sku && <p className="mt-2 text-sm font-medium text-marrom-escuro/55">Cód. {product.sku}</p>}
         {product.descricao && <p className="mt-6 whitespace-pre-line text-lg leading-8 text-marrom-escuro/75">{product.descricao}</p>}
         {product.preco != null && <p className="mt-7 font-titulo text-3xl font-bold text-marrom-escuro">R$ {product.preco.toFixed(2).replace(".", ",")}</p>}
         <div className="mt-6 flex flex-wrap gap-3"><FavoriteButton product={product} /><ShareButton title={product.nome} /></div>
-        <div className="mt-8"><p className="text-sm font-bold text-marrom-escuro">Disponível nas lojas</p><div className="mt-3"><StoreAvailabilityBadge stores={availableStores} storePhones={storePhones} productName={product.nome} /></div></div>
+        <div className="mt-8"><p className="text-sm font-bold text-marrom-escuro">Disponível nas lojas</p><div className="mt-3"><StoreAvailabilityBadge stores={availableStores} storePhones={storePhones} productName={product.nome} productSku={product.sku} /></div></div>
       </section>
     </div>
   </main>;

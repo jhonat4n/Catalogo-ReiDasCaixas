@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import FavoritesProvider from "@/components/FavoritesProvider";
 import FavoritesBar from "@/components/FavoritesBar";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import ReviewPopup from "@/components/ReviewPopup";
+import { getAvaliacoesPublicas } from "@/lib/sanity-client";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora", weight: ["700"] });
@@ -21,7 +23,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = { themeColor: "#3B2A1E" };
+export const revalidate = 60;
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="pt-BR"><body className={`${inter.variable} ${lora.variable} font-texto`}><FavoritesProvider><Header />{children}<Footer /><FavoritesBar /><FloatingWhatsApp /></FavoritesProvider></body></html>;
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const reviews = await getAvaliacoesPublicas();
+  return <html lang="pt-BR"><body className={`${inter.variable} ${lora.variable} font-texto`}><FavoritesProvider><Header />{children}<Footer /><FavoritesBar /><FloatingWhatsApp /><ReviewPopup reviews={reviews} /></FavoritesProvider></body></html>;
 }

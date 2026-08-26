@@ -20,6 +20,7 @@ export type Produto = {
   _id: string;
   nome: string;
   slug: string;
+  sku?: string;
   descricao?: string;
   preco?: number;
   imagens?: unknown[];
@@ -50,10 +51,21 @@ export type FotoGaleria = {
   ordem?: number;
 };
 
+export type Avaliacao = {
+  _id: string;
+  nome: string;
+  estrelas: number;
+  comentario: string;
+  data?: string;
+  produto?: { nome: string; sku?: string };
+  loja?: { unidade: string };
+};
+
 const produtoProjection = `{
   _id,
   nome,
   "slug": slug.current,
+  sku,
   descricao,
   preco,
   imagens,
@@ -129,6 +141,24 @@ export async function getFotosGaleria() {
         titulo,
         descricao,
         ordem
+      }`,
+    );
+  } catch {
+    return [];
+  }
+}
+
+export async function getAvaliacoesPublicas() {
+  try {
+    return await sanityClient.fetch<Avaliacao[]>(
+      `*[_type == 'avaliacao' && aprovada == true && estrelas >= 4 && estrelas <= 5] | order(coalesce(data, _createdAt) desc) {
+        _id,
+        nome,
+        estrelas,
+        comentario,
+        data,
+        "produto": produto->{ nome, "sku": sku },
+        "loja": loja->{ "unidade": unidade }
       }`,
     );
   } catch {

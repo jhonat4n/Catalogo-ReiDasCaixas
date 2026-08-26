@@ -5,5 +5,5 @@ export const storeDetails: Record<StoreName, { phone: string; address: string }>
   "BH Centro": { phone: "31 98223-9878", address: "R. São Paulo, 656 — Belo Horizonte/MG" },
 };
 export function whatsappUrl(phone: string, message?: string) { const base = `https://wa.me/${phone.replace(/\D/g, "")}`; return message ? `${base}?text=${encodeURIComponent(message)}` : base; }
-export function favoriteMessage(names: string[]) { return `Olá! Gostaria de pedir um orçamento para estes produtos:\n${names.map((name) => `- ${name}`).join("\n")}`; }
-
+export type WhatsAppProduct = { name: string; sku?: string };
+export function favoriteMessage(products: WhatsAppProduct[]) { return `Olá! Gostaria de pedir um orçamento para estes produtos:\n${products.map((product) => `- ${product.name}${product.sku ? ` (Cód. ${product.sku})` : ""}`).join("\n")}`; }

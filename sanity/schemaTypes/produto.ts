@@ -6,6 +6,21 @@ export const produto = defineType({
   type: "document",
   fields: [
     defineField({
+      name: "sku",
+      title: "Código / SKU",
+      type: "string",
+      description: "Código usado para identificar a peça no catálogo e nos atendimentos via WhatsApp.",
+      validation: (rule) => rule.custom(async (value, context) => {
+        if (typeof value !== "string" || !value.trim()) return true;
+        const client = context.getClient({ apiVersion: "2024-01-01" });
+        const duplicate = await client.fetch<boolean>(
+          `count(*[_type == "produto" && sku == $sku && _id != $id && _id != $draftId]) > 0`,
+          { sku: value.trim(), id: context.document?._id, draftId: `drafts.${context.document?._id}` },
+        );
+        return duplicate ? "Este Código / SKU já está sendo usado por outro produto." : true;
+      }),
+    }),
+    defineField({
       name: "unidadesDisponiveis",
       title: "Unidades disponíveis",
       type: "array",

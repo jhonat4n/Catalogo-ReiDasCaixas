@@ -18,8 +18,9 @@ export default function ProductCard({ product, storePhones }: ProductCardProps) 
       <div className="flex flex-1 flex-col p-5">
         <p className="text-xs font-bold uppercase tracking-wide text-vermelho">{product.categoria?.nome ?? "Sem categoria"}</p>
         <h2 className="mt-2 font-titulo text-xl font-bold text-marrom-escuro">{product.nome}</h2>
+        {product.sku && <p className="mt-1 text-xs font-medium text-marrom-escuro/55">Cód. {product.sku}</p>}
         {product.preco != null && <p className="mt-3 text-lg font-bold text-marrom-escuro">R$ {product.preco.toFixed(2).replace(".", ",")}</p>}
-        <div className="mt-auto pt-4"><StoreAvailabilityBadge stores={stores} storePhones={storePhones} productName={product.nome} /></div>
+        <div className="mt-auto pt-4"><StoreAvailabilityBadge stores={stores} storePhones={storePhones} productName={product.nome} productSku={product.sku} /></div>
       </div>
     </article>
   );

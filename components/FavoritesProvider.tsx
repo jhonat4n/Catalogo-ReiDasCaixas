@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import type { StoreName } from "@/lib/sanity-client";
 
-export type FavoriteProduct = { id: string; name: string; slug: string; stores: StoreName[] };
+export type FavoriteProduct = { id: string; name: string; sku?: string; slug: string; stores: StoreName[] };
 type FavoritesContextValue = { favorites: FavoriteProduct[]; hydrated: boolean; isFavorite: (id: string) => boolean; toggleFavorite: (product: FavoriteProduct) => void; removeFavorite: (id: string) => void; clearFavorites: () => void };
 const storageKey = "rei-das-caixas:favorites";
 const FavoritesContext = createContext<FavoritesContextValue | null>(null);
@@ -38,4 +38,3 @@ export function useFavorites() {
   if (!context) throw new Error("useFavorites must be used inside FavoritesProvider");
   return context;
 }
-

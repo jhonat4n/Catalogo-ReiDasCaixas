@@ -28,18 +28,32 @@ npm start
 ## Sanity CMS e painel administrativo
 
 O painel está incorporado em <http://localhost:3000/studio>. Os tipos disponíveis são
-`produto`, `categoria` e `loja`.
+`produto`, `categoria`, `loja`, `fotoGaleria` e `avaliacao`.
+
+### Avaliações
+
+A página `/avaliar` permite que clientes enviem nome, nota de 1 a 5 estrelas, comentário,
+produto e unidade opcionais. O envio passa pela API server-side e cria a avaliação no
+Sanity sempre com `aprovada: false`. O token privado `SANITY_API_WRITE_TOKEN` nunca é
+enviado ao navegador e deve ser configurado como variável de ambiente na Vercel.
+
+Para moderar uma avaliação, abra **Avaliação** no Studio, revise o comentário e altere
+**Aprovada para exibição** para publicar ou manter o registro não aprovado. O pop-up do
+site exibe somente avaliações aprovadas com 4 ou 5 estrelas, apenas em telas desktop;
+notas de 1 a 3 continuam disponíveis no Studio para análise interna.
 
 Para cadastrar um produto:
 
 1. Abra **Produto** no menu lateral e clique em criar.
-2. Preencha nome, slug, categoria, descrição e, se aplicável, preço.
-3. Em **Unidades disponíveis**, marque **Eldorado**, **BH Centro** ou ambas. Essa seleção
+2. Preencha o **Código / SKU** manualmente, se desejar (por exemplo, `APL-0042`). O código
+   identifica a peça no catálogo e nos atendimentos via WhatsApp e deve ser único.
+3. Preencha nome, slug, categoria, descrição e, se aplicável, preço.
+4. Em **Unidades disponíveis**, marque **Eldorado**, **BH Centro** ou ambas. Essa seleção
    controla os selos dos cards e os botões de WhatsApp da página do produto.
-4. Em **Imagens**, faça upload das fotos reais quando estiverem prontas. Adicione o texto
+5. Em **Imagens**, faça upload das fotos reais quando estiverem prontas. Adicione o texto
    alternativo de cada foto e publique o documento. Enquanto não houver imagem publicada,
    o site mostra `ImagePlaceholder` com “Foto em breve”.
-5. Marque **Destaque** para exibir o produto na seção de destaques da página inicial.
+6. Marque **Destaque** para exibir o produto na seção de destaques da página inicial.
 
 Para cadastrar fotos na galeria pelo Studio, abra **Foto da galeria**, crie um documento,
 envie a imagem, informe o título (por exemplo, “Ambiente da loja”), adicione uma descrição

@@ -1,5 +1,25 @@
 # Changelog
 
+- (2026-08-26) Substituída a composição de imagens empilhadas do Hero por um carrossel
+  automático com `MDF_boxes.jpeg` e `Caixas_de_MDF.jpeg`, incluindo autoplay de 5 segundos,
+  indicadores, setas acessíveis, pausa ao passar o mouse e transição discreta.
+
+- (2026-08-26) Substituído o placeholder do Hero da Home por uma composição responsiva
+  com as imagens reais `MDF_boxes.jpeg` e `Caixas_de_MDF.jpeg`. O item `Avalie` foi
+  reposicionado para depois de `Contato` nos menus desktop e mobile.
+
+- (2026-08-26) Adicionado o sistema de avaliações integrado ao Sanity: schema `avaliacao`,
+  formulário público em `/avaliar`, API server-side com honeypot e aprovação manual. O
+  pop-up global exibe, no desktop, apenas avaliações aprovadas com 4 ou 5 estrelas,
+  alternando avaliações com nome anonimizado, resumo do comentário e suporte a teclado,
+  redução de movimento e fechamento manual. Notas de 1 a 3 permanecem armazenadas para
+  análise interna e a variável privada `SANITY_API_WRITE_TOKEN` foi documentada.
+
+- (2026-08-26) Alterado o título do catálogo para “Encontre sua peça ideal”. Adicionado o
+  campo opcional e único **Código / SKU** ao schema de produtos, com definição manual no
+  Sanity. O SKU é exibido no catálogo e na página do produto e incluído nas mensagens de
+  WhatsApp de disponibilidade e de orçamento dos favoritos quando estiver disponível.
+
 - (2026-08-25) Adicionado botão para compartilhar produtos por compartilhamento nativo
   ou cópia do link na página de detalhe.
 - (2026-08-25) Restaurado o verde escuro `#16803F` nos botões e links de WhatsApp.

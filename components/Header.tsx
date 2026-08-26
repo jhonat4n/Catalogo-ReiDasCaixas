@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 
-const links = [["Início", "/"], ["Sobre", "/sobre"], ["Catálogo", "/catalogo"], ["Corte a Laser", "/corte-a-laser"], ["Galeria", "/galeria"], ["Unidades", "/unidades"], ["FAQ", "/faq"], ["Contato", "/contato"]];
+const links = [["Início", "/"], ["Sobre", "/sobre"], ["Catálogo", "/catalogo"], ["Corte a Laser", "/corte-a-laser"], ["Galeria", "/galeria"], ["Unidades", "/unidades"], ["FAQ", "/faq"], ["Contato", "/contato"], ["Avalie", "/avaliar"]];
 const stores = [{ name: "Eldorado", address: "Av. João César de Oliveira, 2660 — Contagem/MG", phone: "31 99440-0481" }, { name: "BH Centro", address: "R. São Paulo, 656 — Belo Horizonte/MG", phone: "31 98223-9878" }];
 const whatsappUrl = (phone: string) => `https://wa.me/${phone.replace(/\D/g, "")}`;
 
