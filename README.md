@@ -103,6 +103,8 @@ controladas pelo acordeão.
 - Sanity Studio em `/studio` para manutenção do catálogo.
 - Layout responsivo, acessível, com foco visível, `next/image` e placeholders para fotos.
 - WhatsApp das unidades Eldorado e BH Centro e Instagram `@rei_das_caixas`.
+- A página `/contato` oferece um botão responsivo e acessível para seguir o perfil oficial
+  no Instagram; o Footer mantém o acesso discreto ao mesmo perfil.
 - Os selos de disponibilidade dos produtos são links individuais para o WhatsApp da
   unidade correspondente, com o nome do produto na mensagem pré-preenchida. Os números
   são carregados do campo `whatsapp` do schema `loja`. Os links usam o verde WhatsApp

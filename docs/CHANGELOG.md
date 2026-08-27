@@ -1,5 +1,10 @@
 # Changelog
 
+- (2026-08-27) Substituído o link simples do Instagram em `/contato` por um botão
+  responsivo com ícone Lucide, foco acessível, hover institucional e abertura do perfil
+  em nova aba. O link discreto do Instagram no Footer foi mantido clicável e recebeu o
+  mesmo tratamento de segurança no `target`.
+
 - (2026-08-26) Alterado o comportamento dos itens da Galeria: cada foto publicada agora
   navega semanticamente para `/catalogo` ao ser clicada, com foco acessível, cursor e CTA
   discreto no overlay. O overlay interativo anterior da Galeria foi removido para evitar
