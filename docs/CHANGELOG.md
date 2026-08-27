@@ -1,5 +1,9 @@
 # Changelog
 
+- (2026-08-27) Removidas as setas laterais de navegação do carrossel do Hero da Home,
+  mantendo autoplay de 5 segundos, transição, pausa ao passar o mouse e indicadores
+  inferiores clicáveis para seleção manual das imagens.
+
 - (2026-08-27) Aprimorado o catálogo com barra de resultados com pluralização correta,
   ordenação por recência, nome e preço, filtros ativos removíveis individualmente e
   botão para limpar filtros. Os cards receberam hover sutil, CTA “Ver detalhes”, SKU
