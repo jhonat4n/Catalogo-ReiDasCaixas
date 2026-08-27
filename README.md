@@ -95,6 +95,8 @@ controladas pelo acordeão.
 
 - Home com hero institucional, diferenciais e produtos marcados como destaque no Sanity.
 - Catálogo em `/catalogo` com busca por nome, filtro por categoria e filtro por unidade.
+- Catálogo com ordenação por recência, nome ou preço, filtros ativos removíveis, estado
+  vazio com contato via WhatsApp e cards responsivos com SKU e acesso aos detalhes.
 - Categorias em `/categoria/[slug]` e detalhes em `/produto/[slug]`, com galeria, preço,
   disponibilidade e perguntas via WhatsApp.
 - Páginas institucionais: `/sobre`, `/galeria`, `/faq`, `/contato` e `/unidades`.

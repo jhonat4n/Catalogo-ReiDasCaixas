@@ -1,5 +1,11 @@
 # Changelog
 
+- (2026-08-27) Aprimorado o catálogo com barra de resultados com pluralização correta,
+  ordenação por recência, nome e preço, filtros ativos removíveis individualmente e
+  botão para limpar filtros. Os cards receberam hover sutil, CTA “Ver detalhes”, SKU
+  secundário, imagens padronizadas e estado vazio amigável com CTAs de limpeza e WhatsApp,
+  mantendo layout responsivo, favoritos e disponibilidade por unidade.
+
 - (2026-08-27) Substituído o link simples do Instagram em `/contato` por um botão
   responsivo com ícone Lucide, foco acessível, hover institucional e abertura do perfil
   em nova aba. O link discreto do Instagram no Footer foi mantido clicável e recebeu o

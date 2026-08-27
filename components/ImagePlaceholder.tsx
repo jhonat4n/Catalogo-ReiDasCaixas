@@ -23,7 +23,7 @@ export default function ImagePlaceholder({
       } ${className}`}
     >
       {image ? (
-        <Image src={image} alt={alt} fill className="object-cover" sizes={sizes} />
+        <Image src={image} alt={alt} fill className="object-cover transition-transform duration-300" sizes={sizes} />
       ) : (
         <div role="img" aria-label={`${alt}: ${text}`} className="flex flex-col items-center gap-3 px-4 text-center text-marrom-escuro/80">
           <ImageIcon aria-hidden="true" className="h-10 w-10" strokeWidth={1.5} />

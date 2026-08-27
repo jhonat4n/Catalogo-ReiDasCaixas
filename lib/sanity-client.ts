@@ -18,6 +18,7 @@ export type StoreName = "Eldorado" | "BH Centro";
 
 export type Produto = {
   _id: string;
+  _createdAt?: string;
   nome: string;
   slug: string;
   sku?: string;
@@ -63,6 +64,7 @@ export type Avaliacao = {
 
 const produtoProjection = `{
   _id,
+  _createdAt,
   nome,
   "slug": slug.current,
   sku,
