@@ -42,24 +42,29 @@ Para moderar uma avaliação, abra **Avaliação** no Studio, revise o comentár
 site exibe somente avaliações aprovadas com 4 ou 5 estrelas, apenas em telas desktop;
 notas de 1 a 3 continuam disponíveis no Studio para análise interna.
 
+No menu do Studio, **Produtos** e **Galeria** aparecem no início para facilitar o acesso.
+Campos obrigatórios são indicados pelo Studio e também explicados no próprio formulário.
+
 Para cadastrar um produto:
 
-1. Abra **Produto** no menu lateral e clique em criar.
+1. Abra **Produtos** no menu lateral e clique em criar.
 2. Preencha o **Código / SKU** manualmente, se desejar (por exemplo, `APL-0042`). O código
    identifica a peça no catálogo e nos atendimentos via WhatsApp e deve ser único.
-3. Preencha nome, slug, categoria, descrição e, se aplicável, preço.
+3. Preencha nome, endereço do produto (slug), categoria, descrição e unidades disponíveis;
+   esses campos são obrigatórios. Use **Gerar** no campo de endereço para criá-lo a partir
+   do nome. Preço é opcional.
 4. Em **Unidades disponíveis**, marque **Eldorado**, **BH Centro** ou ambas. Essa seleção
    controla os selos dos cards e os botões de WhatsApp da página do produto.
-5. Em **Imagens**, faça upload das fotos reais quando estiverem prontas. Adicione o texto
-   alternativo de cada foto e publique o documento. Enquanto não houver imagem publicada,
-   o site mostra `ImagePlaceholder` com “Foto em breve”.
+5. Em **Fotos do produto**, use o botão do campo para selecionar ou enviar uma ou mais fotos.
+   A descrição de imagem para acessibilidade é opcional. Publique o documento; enquanto não
+   houver foto publicada, o site mostra `ImagePlaceholder` com “Foto em breve”.
 6. Marque **Destaque** para exibir o produto na seção de destaques da página inicial.
 
-Para cadastrar fotos na galeria pelo Studio, abra **Foto da galeria**, crie um documento,
-envie a imagem, informe o título (por exemplo, “Ambiente da loja”), adicione uma descrição
-breve se desejar e publique. Use o campo **Ordem** para controlar a posição; números menores
-aparecem primeiro. Sem fotos publicadas, `/galeria` mostra `ImagePlaceholder`; com fotos,
-título e descrição ficam acessíveis por mouse, toque e em telas pequenas.
+Para cadastrar fotos na galeria, abra **Galeria**, crie um documento, selecione ou envie uma
+foto, informe o título (por exemplo, “Ambiente da loja”) e publique. A descrição e a posição
+na galeria são opcionais; números menores aparecem primeiro. Sem fotos publicadas, `/galeria`
+mostra `ImagePlaceholder`; com fotos, título e descrição ficam acessíveis por mouse, toque e
+em telas pequenas.
 
 As lojas iniciais podem ser cadastradas de forma idempotente com um token de escrita:
 

@@ -24,6 +24,7 @@ export const produto = defineType({
       name: "unidadesDisponiveis",
       title: "Unidades disponíveis",
       type: "array",
+      description: "Obrigatório. Marque pelo menos uma unidade onde este produto está disponível.",
       of: [{ type: "string" }],
       options: {
         list: ["Eldorado", "BH Centro"],
@@ -35,12 +36,14 @@ export const produto = defineType({
       name: "nome",
       title: "Nome",
       type: "string",
+      description: "Obrigatório. Este nome será exibido no catálogo.",
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: "slug",
-      title: "Slug",
+      title: "Endereço do produto (slug)",
       type: "slug",
+      description: "Obrigatório. Use Gerar para criar o endereço a partir do nome do produto.",
       options: { source: "nome", maxLength: 96 },
       validation: (rule) => rule.required(),
     }),
@@ -48,6 +51,7 @@ export const produto = defineType({
       name: "categoria",
       title: "Categoria",
       type: "reference",
+      description: "Obrigatório. Escolha uma categoria já cadastrada.",
       to: [{ type: "categoria" }],
       validation: (rule) => rule.required(),
     }),
@@ -56,18 +60,21 @@ export const produto = defineType({
       title: "Descrição",
       type: "text",
       rows: 5,
+      description: "Obrigatório. Explique os detalhes e características do produto.",
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: "preco",
       title: "Preço",
       type: "number",
+      description: "Opcional. Informe o preço em reais, sem digitar o símbolo R$.",
       validation: (rule) => rule.min(0),
     }),
     defineField({
       name: "imagens",
-      title: "Imagens",
+      title: "Fotos do produto",
       type: "array",
+      description: "Opcional. Adicione uma ou mais fotos: use o botão deste campo para selecionar ou enviar imagens. Arraste cada foto para mudar a ordem.",
       of: [
         {
           type: "image",
@@ -75,8 +82,9 @@ export const produto = defineType({
           fields: [
             defineField({
               name: "alt",
-              title: "Texto alternativo",
+              title: "Descrição da imagem (acessibilidade)",
               type: "string",
+              description: "Descreva o que aparece na foto para pessoas que usam leitor de tela.",
             }),
           ],
         },
@@ -96,6 +104,16 @@ export const produto = defineType({
     }),
   ],
   preview: {
-    select: { title: "nome", media: "imagens.0" },
+    select: { title: "nome", media: "imagens.0", sku: "sku", categoria: "categoria.nome" },
+    prepare({ title, media, sku, categoria }) {
+      const details = [sku ? `Código: ${sku}` : undefined, categoria]
+        .filter(Boolean)
+        .join(" · ");
+      return {
+        title: title || "Produto sem nome",
+        media,
+        subtitle: details || "Sem código ou categoria informados",
+      };
+    },
   },
 });

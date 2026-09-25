@@ -7,15 +7,17 @@ export const fotoGaleria = defineType({
   fields: [
     defineField({
       name: "imagem",
-      title: "Imagem",
+      title: "Foto",
       type: "image",
+      description: "Obrigatório. Selecione uma imagem ou envie uma foto do seu dispositivo.",
       options: { hotspot: true },
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: "titulo",
-      title: "Título",
+      title: "Título da foto",
       type: "string",
+      description: "Obrigatório. Dê um nome fácil de reconhecer, como ‘Ambiente da loja’.",
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -23,11 +25,13 @@ export const fotoGaleria = defineType({
       title: "Descrição",
       type: "text",
       rows: 3,
+      description: "Opcional. Conte brevemente o que a foto mostra.",
     }),
     defineField({
       name: "ordem",
-      title: "Ordem",
+      title: "Posição na galeria",
       type: "number",
+      description: "Opcional. Números menores aparecem primeiro na galeria.",
     }),
   ],
   preview: {

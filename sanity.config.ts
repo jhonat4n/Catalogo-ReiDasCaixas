@@ -12,7 +12,26 @@ export default defineConfig({
   basePath: "/studio",
   projectId,
   dataset,
-  plugins: [structureTool()],
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title("Conteúdo")
+          .items([
+            S.listItem()
+              .title("Produtos")
+              .schemaType("produto")
+              .child(S.documentTypeList("produto").title("Produtos")),
+            S.listItem()
+              .title("Galeria")
+              .schemaType("fotoGaleria")
+              .child(S.documentTypeList("fotoGaleria").title("Fotos da galeria")),
+            ...S.documentTypeListItems().filter(
+              (item) => !["produto", "fotoGaleria"].includes(item.getId() ?? ""),
+            ),
+          ]),
+    }),
+  ],
   schema: {
     types: [produto, loja, categoria, fotoGaleria, avaliacao],
   },

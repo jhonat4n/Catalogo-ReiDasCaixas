@@ -1,5 +1,10 @@
 # Changelog
 
+- (2026-09-25) Facilitado o cadastro no Sanity Studio: Produtos e Galeria agora aparecem
+  primeiro no menu; formulários de produto e foto da galeria explicam os campos obrigatórios
+  e como adicionar imagens; prévias de produtos mostram nome, foto, código e categoria quando
+  disponíveis. Nomes internos, tipos, consultas e documentos existentes foram preservados.
+
 - (2026-08-27) Removidas as setas laterais de navegação do carrossel do Hero da Home,
   mantendo autoplay de 5 segundos, transição, pausa ao passar o mouse e indicadores
   inferiores clicáveis para seleção manual das imagens.
